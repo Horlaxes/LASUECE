@@ -11,6 +11,3 @@ try {
 } catch (Exception $e) {
   
 }
-
-
- ?>
