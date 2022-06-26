@@ -20,7 +20,7 @@
     =========================================================
     * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
     -->
-<link href="./main.css" rel="stylesheet"></head>
+<link href="main.css" rel="stylesheet"></head>
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
         <div class="app-header header-shadow">
@@ -89,7 +89,7 @@
                                 <div class="widget-content-left">
                                     <div class="btn-group">
                                         <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
-                                            <img width="42" class="rounded-circle" src="assets/images/avatars/1.jpg" alt="">
+                                            <img width="42" class="rounded-circle" src="../assets/images/avatars/1.jpg" alt="">
                                             <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                         </a>
                                         <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
@@ -813,7 +813,7 @@
                                                                 <div class="widget-content p-0">
                                                                     <div class="widget-content-wrapper">
                                                                         <div class="widget-content-left mr-3">
-                                                                            <img width="42" class="rounded-circle" src="assets/images/avatars/9.jpg" alt="">
+                                                                            <img width="42" class="rounded-circle" src="../assets/images/avatars/9.jpg" alt="">
                                                                         </div>
                                                                         <div class="widget-content-left">
                                                                             <div class="widget-heading">Ella-Rose Henry</div>
@@ -835,7 +835,7 @@
                                                                 <div class="widget-content p-0">
                                                                     <div class="widget-content-wrapper">
                                                                         <div class="widget-content-left mr-3">
-                                                                            <img width="42" class="rounded-circle" src="assets/images/avatars/5.jpg" alt="">
+                                                                            <img width="42" class="rounded-circle" src="../assets/images/avatars/5.jpg" alt="">
                                                                         </div>
                                                                         <div class="widget-content-left">
                                                                             <div class="widget-heading">Ruben Tillman</div>
@@ -857,7 +857,7 @@
                                                                 <div class="widget-content p-0">
                                                                     <div class="widget-content-wrapper">
                                                                         <div class="widget-content-left mr-3">
-                                                                            <img width="42" class="rounded-circle" src="assets/images/avatars/4.jpg" alt="">
+                                                                            <img width="42" class="rounded-circle" src="../assets/images/avatars/4.jpg" alt="">
                                                                         </div>
                                                                         <div class="widget-content-left">
                                                                             <div class="widget-heading">Vinnie Wagstaff</div>
@@ -879,7 +879,7 @@
                                                                 <div class="widget-content p-0">
                                                                     <div class="widget-content-wrapper">
                                                                         <div class="widget-content-left mr-3">
-                                                                            <img width="42" class="rounded-circle" src="assets/images/avatars/3.jpg" alt="">
+                                                                            <img width="42" class="rounded-circle" src="../assets/images/avatars/3.jpg" alt="">
                                                                         </div>
                                                                         <div class="widget-content-left">
                                                                             <div class="widget-heading">Ella-Rose Henry</div>
@@ -901,7 +901,7 @@
                                                                 <div class="widget-content p-0">
                                                                     <div class="widget-content-wrapper">
                                                                         <div class="widget-content-left mr-3">
-                                                                            <img width="42" class="rounded-circle" src="assets/images/avatars/2.jpg" alt="">
+                                                                            <img width="42" class="rounded-circle" src="../assets/images/avatars/2.jpg" alt="">
                                                                         </div>
                                                                         <div class="widget-content-left">
                                                                             <div class="widget-heading">Ruben Tillman</div>
@@ -1141,7 +1141,7 @@
                                                         <div class="widget-content-wrapper">
                                                             <div class="widget-content-left mr-3">
                                                                 <div class="widget-content-left">
-                                                                    <img width="40" class="rounded-circle" src="assets/images/avatars/4.jpg" alt="">
+                                                                    <img width="40" class="rounded-circle" src="../assets/images/avatars/4.jpg" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="widget-content-left flex2">
@@ -1166,7 +1166,7 @@
                                                         <div class="widget-content-wrapper">
                                                             <div class="widget-content-left mr-3">
                                                                 <div class="widget-content-left">
-                                                                    <img width="40" class="rounded-circle" src="assets/images/avatars/3.jpg" alt="">
+                                                                    <img width="40" class="rounded-circle" src="../assets/images/avatars/3.jpg" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="widget-content-left flex2">
@@ -1191,7 +1191,7 @@
                                                         <div class="widget-content-wrapper">
                                                             <div class="widget-content-left mr-3">
                                                                 <div class="widget-content-left">
-                                                                    <img width="40" class="rounded-circle" src="assets/images/avatars/2.jpg" alt="">
+                                                                    <img width="40" class="rounded-circle" src="../assets/images/avatars/2.jpg" alt="">
                                                                 </div>
                                                             </div>
                                                             <div class="widget-content-left flex2">
@@ -1216,7 +1216,7 @@
                                                         <div class="widget-content-wrapper">
                                                             <div class="widget-content-left mr-3">
                                                                 <div class="widget-content-left">
-                                                                    <img width="40" class="rounded-circle" src="assets/images/avatars/1.jpg" alt=""></div>
+                                                                    <img width="40" class="rounded-circle" src="../assets/images/avatars/1.jpg" alt=""></div>
                                                             </div>
                                                             <div class="widget-content-left flex2">
                                                                 <div class="widget-heading">Vinnie Wagstaff</div>
@@ -1370,5 +1370,5 @@
                 <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
         </div>
     </div>
-<script type="text/javascript" src="./assets/scripts/main.js"></script></body>
+<script type="text/javascript" src="../assets/scripts/main.js"></script></body>
 </html>
