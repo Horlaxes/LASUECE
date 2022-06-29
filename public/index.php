@@ -1,17 +1,4 @@
-<?php 
-session_start();
-if(isset($_SESSION['examineeSession']['examineenakalogin'])) header("location:home.php");
+<?php
 
- ?>
-
-<?php 
-
-include("login-ui/index.php");
-
-
- ?>
-
-
-<script type="text/javascript" src="./js/jquery.js"></script>
-<script type="text/javascript" src="./js/ajax.js"></script>
-<script type="text/javascript" src="./js/sweetalert.js"></script>
+//require __DIR__.'/../index.php';
+require __DIR__.'/../vendor/autoload.php';
