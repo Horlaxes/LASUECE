@@ -10,7 +10,8 @@ if($selQuest->rowCount() > 0)
 }
 else
 {
-	$insQuest = $conn->query("INSERT INTO exam_question_tbl(exam_id,exam_question,exam_ch1,exam_ch2,exam_ch3,exam_ch4,exam_answer) VALUES('$examId','$question','$choice_A','$choice_B','$choice_C','$choice_D','$correctAnswer') ");
+	$insQuest = $conn->query("INSERT INTO exam_question_tbl(exam_id,exam_question) VALUES('$examId','$question') ");
+//	$insQuest = $conn->query("INSERT INTO exam_question_tbl(exam_id,exam_question,exam_ch1,exam_ch2,exam_ch3,exam_ch4,exam_answer) VALUES('$examId','$question','$choice_A','$choice_B','$choice_C','$choice_D','$correctAnswer') ");
 
 	if($insQuest)
 	{

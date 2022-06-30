@@ -46,7 +46,7 @@
                                 while ($selExmneRow = $selExmne->fetch(PDO::FETCH_ASSOC)) { ?>
                                     <?php 
                                             $exmneId = $selExmneRow['exmne_id'];
-                                            $selScore = $conn->query("SELECT * FROM exam_question_tbl eqt INNER JOIN exam_answers ea ON eqt.eqt_id = ea.quest_id AND eqt.exam_answer = ea.exans_answer  WHERE ea.axmne_id='$exmneId' AND ea.exam_id='$exam_id' AND ea.exans_status='new' ORDER BY ea.exans_id DESC");
+                                            $selScore = $conn->query("SELECT * FROM exam_question_tbl eqt INNER JOIN exam_answers ea ON eqt.eqt_id = ea.quest_id WHERE ea.axmne_id='$exmneId' AND ea.exam_id='$exam_id' AND ea.exans_status='new' AND ea.exans_grade='correct' ORDER BY ea.exans_id DESC");
 
                                               $selAttempt = $conn->query("SELECT * FROM exam_attempt WHERE exmne_id='$exmneId' AND exam_id='$exam_id' ");
 
@@ -62,14 +62,14 @@
                                              {
                                                 echo "background-color: #E9ECEE;color:black";
                                              }
-                                             else if($ans >= 90)
+                                             else if($ans >= 70)
                                              {
                                                 echo "background-color: yellow;";
                                              } 
-                                             else if($ans >= 80){
+                                             else if($ans >= 60){
                                                 echo "background-color: green;color:white";
                                              }
-                                             else if($ans >= 75){
+                                             else if($ans >= 50){
                                                 echo "background-color: blue;color:white";
                                              }
                                              else

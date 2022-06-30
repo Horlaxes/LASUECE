@@ -213,36 +213,37 @@
           <div class="form-group">
             <label>Question</label>
             <input type="hidden" name="examId" value="<?php echo $exId; ?>">
-            <input type="" name="question" id="course_name" class="form-control" placeholder="Input question" autocomplete="off">
+              <textarea name="question" id="course_name" class="form-control" placeholder="Input question" required autocomplete="off" rows="4"></textarea>
+<!--            <input type="" name="question" id="course_name" class="form-control" placeholder="Input question" autocomplete="off">-->
           </div>
 
-          <fieldset>
-            <legend>Input word for choice's</legend>
-            <div class="form-group">
-                <label>Choice A</label>
-                <input type="" name="choice_A" id="choice_A" class="form-control" placeholder="Input choice A" autocomplete="off">
-            </div>
-
-            <div class="form-group">
-                <label>Choice B</label>
-                <input type="" name="choice_B" id="choice_B" class="form-control" placeholder="Input choice B" autocomplete="off">
-            </div>
-
-            <div class="form-group">
-                <label>Choice C</label>
-                <input type="" name="choice_C" id="choice_C" class="form-control" placeholder="Input choice C" autocomplete="off">
-            </div>
-
-            <div class="form-group">
-                <label>Choice D</label>
-                <input type="" name="choice_D" id="choice_D" class="form-control" placeholder="Input choice D" autocomplete="off">
-            </div>
-
-            <div class="form-group">
-                <label>Correct Answer</label>
-                <input type="" name="correctAnswer" id="" class="form-control" placeholder="Input correct answer" autocomplete="off">
-            </div>
-          </fieldset>
+<!--          <fieldset>-->
+<!--            <legend>Input word for choice's</legend>-->
+<!--            <div class="form-group">-->
+<!--                <label>Choice A</label>-->
+<!--                <input type="" name="choice_A" id="choice_A" class="form-control" placeholder="Input choice A" autocomplete="off">-->
+<!--            </div>-->
+<!---->
+<!--            <div class="form-group">-->
+<!--                <label>Choice B</label>-->
+<!--                <input type="" name="choice_B" id="choice_B" class="form-control" placeholder="Input choice B" autocomplete="off">-->
+<!--            </div>-->
+<!---->
+<!--            <div class="form-group">-->
+<!--                <label>Choice C</label>-->
+<!--                <input type="" name="choice_C" id="choice_C" class="form-control" placeholder="Input choice C" autocomplete="off">-->
+<!--            </div>-->
+<!---->
+<!--            <div class="form-group">-->
+<!--                <label>Choice D</label>-->
+<!--                <input type="" name="choice_D" id="choice_D" class="form-control" placeholder="Input choice D" autocomplete="off">-->
+<!--            </div>-->
+<!---->
+<!--            <div class="form-group">-->
+<!--                <label>Correct Answer</label>-->
+<!--                <input type="" name="correctAnswer" id="" class="form-control" placeholder="Input correct answer" autocomplete="off">-->
+<!--            </div>-->
+<!--          </fieldset>-->
         </div>
       </div>
       <div class="modal-footer">

@@ -49,44 +49,42 @@
                       <?php $questId = $selQuestRow['eqt_id']; ?>
                     <tr>
                         <td>
-                            <p><b><?php echo $i++ ; ?> .) <?php echo $selQuestRow['exam_question']; ?></b></p>
-                            <div class="col-md-4 float-left">
-                              <div class="form-group pl-4 ">
-                                <input name="answer[<?php echo $questId; ?>][correct]" value="<?php echo $selQuestRow['exam_ch1']; ?>" class="form-check-input" type="radio" value="" id="invalidCheck" required >
-                               
-                                <label class="form-check-label" for="invalidCheck">
-                                    <?php echo $selQuestRow['exam_ch1']; ?>
-                                </label>
-                              </div>  
-
-                              <div class="form-group pl-4">
-                                <input name="answer[<?php echo $questId; ?>][correct]" value="<?php echo $selQuestRow['exam_ch2']; ?>" class="form-check-input" type="radio" value="" id="invalidCheck" required >
-                               
-                                <label class="form-check-label" for="invalidCheck">
-                                    <?php echo $selQuestRow['exam_ch2']; ?>
-                                </label>
-                              </div>   
-                            </div>
-                            <div class="col-md-8 float-left">
-                             <div class="form-group pl-4">
-                                <input name="answer[<?php echo $questId; ?>][correct]" value="<?php echo $selQuestRow['exam_ch3']; ?>" class="form-check-input" type="radio" value="" id="invalidCheck" required >
-                               
-                                <label class="form-check-label" for="invalidCheck">
-                                    <?php echo $selQuestRow['exam_ch3']; ?>
-                                </label>
-                              </div>  
-
-                              <div class="form-group pl-4">
-                                <input name="answer[<?php echo $questId; ?>][correct]" value="<?php echo $selQuestRow['exam_ch4']; ?>" class="form-check-input" type="radio" value="" id="invalidCheck" required >
-                               
-                                <label class="form-check-label" for="invalidCheck">
-                                    <?php echo $selQuestRow['exam_ch4']; ?>
-                                </label>
-                              </div>   
-                            </div>
-                            </div>
-                             
-
+                            <p><b><?php echo $i++ ; ?>.) <?php echo $selQuestRow['exam_question']; ?></b></p>
+                            <textarea name="answer[<?php echo $questId; ?>]" id="answer-<?php echo $questId; ?>" cols="30" rows="3" class="form-control" required placeholder="Enter your answer"></textarea>
+<!--                            <div class="col-md-4 float-left">-->
+<!--                              <div class="form-group pl-4 ">-->
+<!--                                <input name="answer[--><?php //echo $questId; ?><!--][correct]" value="--><?php //echo $selQuestRow['exam_ch1']; ?><!--" class="form-check-input" type="radio" value="" id="invalidCheck" required >-->
+<!--                               -->
+<!--                                <label class="form-check-label" for="invalidCheck">-->
+<!--                                    --><?php //echo $selQuestRow['exam_ch1']; ?>
+<!--                                </label>-->
+<!--                              </div>  -->
+<!---->
+<!--                              <div class="form-group pl-4">-->
+<!--                                <input name="answer[--><?php //echo $questId; ?><!--][correct]" value="--><?php //echo $selQuestRow['exam_ch2']; ?><!--" class="form-check-input" type="radio" value="" id="invalidCheck" required >-->
+<!--                               -->
+<!--                                <label class="form-check-label" for="invalidCheck">-->
+<!--                                    --><?php //echo $selQuestRow['exam_ch2']; ?>
+<!--                                </label>-->
+<!--                              </div>   -->
+<!--                            </div>-->
+<!--                            <div class="col-md-8 float-left">-->
+<!--                             <div class="form-group pl-4">-->
+<!--                                <input name="answer[--><?php //echo $questId; ?><!--][correct]" value="--><?php //echo $selQuestRow['exam_ch3']; ?><!--" class="form-check-input" type="radio" value="" id="invalidCheck" required >-->
+<!--                               -->
+<!--                                <label class="form-check-label" for="invalidCheck">-->
+<!--                                    --><?php //echo $selQuestRow['exam_ch3']; ?>
+<!--                                </label>-->
+<!--                              </div>  -->
+<!---->
+<!--                              <div class="form-group pl-4">-->
+<!--                                <input name="answer[--><?php //echo $questId; ?><!--][correct]" value="--><?php //echo $selQuestRow['exam_ch4']; ?><!--" class="form-check-input" type="radio" value="" id="invalidCheck" required >-->
+<!--                               -->
+<!--                                <label class="form-check-label" for="invalidCheck">-->
+<!--                                    --><?php //echo $selQuestRow['exam_ch4']; ?>
+<!--                                </label>-->
+<!--                              </div>   -->
+<!--                            </div>-->
                         </td>
                     </tr>
 

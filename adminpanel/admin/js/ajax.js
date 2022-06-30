@@ -375,6 +375,24 @@ $(document).on("submit","#updateExamineeFrm" , function(){
 });
 
 
+
+// Grade Student
+$(document).on("submit","#gradeStudentFrm" , function(){
+  $.post("query/gradeStudentExe.php", $(this).serialize() , function(data){
+     if(data.res == "success")
+     {
+        Swal.fire(
+            'Success',
+            'Exam has been successfully graded!',
+            'success'
+          )
+          refreshDiv();
+     }
+  },'json')
+  return false;
+});
+
+
 function refreshDiv()
 {
   $('#tableList').load(document.URL +  ' #tableList');

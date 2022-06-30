@@ -1,7 +1,11 @@
  <?php 
     $examId = $_GET['id'];
     $selExam = $conn->query("SELECT * FROM exam_tbl WHERE ex_id='$examId' ")->fetch(PDO::FETCH_ASSOC);
-
+    $selQuest = $conn->query("SELECT * FROM exam_question_tbl eqt INNER JOIN exam_answers ea ON eqt.eqt_id = ea.quest_id WHERE eqt.exam_id='$examId' AND ea.axmne_id='$exmneId' AND ea.exans_status='new' ");
+    $graded = true;
+    while ($selQuestRow = $selQuest->fetch(PDO::FETCH_ASSOC))
+        if ($selQuestRow['exans_grade'] == 'pending')
+            $graded = false;
  ?>
 
 <div class="app-main__outer">
@@ -21,7 +25,10 @@
                     </div>
                 </div>
             </div>
-        </div>  
+        </div>
+        <?php
+            if ($graded) {
+        ?>
         <div class="row col-md-12">
         	<h1 class="text-primary">RESULT'S</h1>
         </div>
@@ -31,9 +38,9 @@
                 <div class="card-body">
                 	<h5 class="card-title">Your Answer's</h5>
         			<table class="align-middle mb-0 table table-borderless table-striped table-hover" id="tableList">
-                    <?php 
-                    	$selQuest = $conn->query("SELECT * FROM exam_question_tbl eqt INNER JOIN exam_answers ea ON eqt.eqt_id = ea.quest_id WHERE eqt.exam_id='$examId' AND ea.axmne_id='$exmneId' AND ea.exans_status='new' ");
-                    	$i = 1;
+                    <?php
+                        $selQuest = $conn->query("SELECT * FROM exam_question_tbl eqt INNER JOIN exam_answers ea ON eqt.eqt_id = ea.quest_id WHERE eqt.exam_id='$examId' AND ea.axmne_id='$exmneId' AND ea.exans_status='new' ");
+                        $i = 1;
                     	while ($selQuestRow = $selQuest->fetch(PDO::FETCH_ASSOC)) { ?>
                     		<tr>
                     			<td>
@@ -41,10 +48,15 @@
                     				<label class="pl-4 text-success">
                     					Answer : 
                     					<?php 
-                    						if($selQuestRow['exam_answer'] != $selQuestRow['exans_answer'])
+                    						if($selQuestRow['exans_grade'] == 'wrong')
+//                    						if($selQuestRow['exam_answer'] != $selQuestRow['exans_answer'])
                     						{ ?>
                     							<span style="color:red"><?php echo $selQuestRow['exans_answer']; ?></span>
-                    						<?PHP }
+                    						<?php }
+                    						elseif($selQuestRow['exans_grade'] == 'pending')
+                    						{ ?>
+                    							<span class="text-warning"><?php echo $selQuestRow['exans_answer']; ?></span>
+                    						<?php }
                     						else
                     						{ ?>
                     							<span class="text-success"><?php echo $selQuestRow['exans_answer']; ?></span>
@@ -71,7 +83,8 @@
                     <div class="widget-content-right">
                         <div class="widget-numbers text-white">
                             <?php 
-                                $selScore = $conn->query("SELECT * FROM exam_question_tbl eqt INNER JOIN exam_answers ea ON eqt.eqt_id = ea.quest_id AND eqt.exam_answer = ea.exans_answer  WHERE ea.axmne_id='$exmneId' AND ea.exam_id='$examId' AND ea.exans_status='new' ");
+                                $selScore = $conn->query("SELECT * FROM exam_question_tbl eqt INNER JOIN exam_answers ea ON eqt.eqt_id = ea.quest_id WHERE ea.axmne_id='$exmneId' AND ea.exam_id='$examId' AND ea.exans_status='new' AND ea.exans_grade='correct' ");
+//                                $selScore = $conn->query("SELECT * FROM exam_question_tbl eqt INNER JOIN exam_answers ea ON eqt.eqt_id = ea.quest_id AND eqt.exam_answer = ea.exans_answer  WHERE ea.axmne_id='$exmneId' AND ea.exam_id='$examId' AND ea.exans_status='new' ");
                             ?>
                             <span>
                                 <?php echo $selScore->rowCount(); ?>
@@ -95,7 +108,7 @@
                         <div class="widget-content-right">
                         <div class="widget-numbers text-white">
                             <?php 
-                                $selScore = $conn->query("SELECT * FROM exam_question_tbl eqt INNER JOIN exam_answers ea ON eqt.eqt_id = ea.quest_id AND eqt.exam_answer = ea.exans_answer  WHERE ea.axmne_id='$exmneId' AND ea.exam_id='$examId' AND ea.exans_status='new' ");
+                                $selScore = $conn->query("SELECT * FROM exam_question_tbl eqt INNER JOIN exam_answers ea ON eqt.eqt_id = ea.quest_id WHERE ea.axmne_id='$exmneId' AND ea.exam_id='$examId' AND ea.exans_status='new' AND ea.exans_grade='correct' ");
                             ?>
                             <span>
                                 <?php 
@@ -112,6 +125,14 @@
             </div>
             </div>
         </div>
+        <?php
+            } else {
+                echo '<div class="row col-md-12">
+                        <h1 class="text-primary"><i>Results will be out once graded, check back later.</i></h1>
+                    </div>
+                ';
+            }
+        ?>
     </div>
 
 

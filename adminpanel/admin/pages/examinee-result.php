@@ -22,6 +22,7 @@
                                 <th>Exam Name</th>
                                 <th>Scores</th>
                                 <th>Ratings</th>
+                                <th>Action</th>
                                 <!-- <th width="10%"></th> -->
                             </tr>
                             </thead>
@@ -39,13 +40,14 @@
                                                 $eid = $selExmneRow['exmne_id'];
                                                 $selExName = $conn->query("SELECT * FROM exam_tbl et INNER JOIN exam_attempt ea ON et.ex_id=ea.exam_id WHERE  ea.exmne_id='$eid' ")->fetch(PDO::FETCH_ASSOC);
                                                 $exam_id = $selExName['ex_id'];
+                                                 $exmne_id = $selExmneRow['exmne_id'];
                                                 echo $selExName['ex_title'];
                                               ?>
                                            </td>
                                            <td>
-                                                    <?php 
-                                                    $selScore = $conn->query("SELECT * FROM exam_question_tbl eqt INNER JOIN exam_answers ea ON eqt.eqt_id = ea.quest_id AND eqt.exam_answer = ea.exans_answer  WHERE ea.axmne_id='$eid' AND ea.exam_id='$exam_id' AND ea.exans_status='new' ");
-                                                      ?>
+                                                <?php
+                                                    $selScore = $conn->query("SELECT * FROM exam_question_tbl eqt INNER JOIN exam_answers ea ON eqt.eqt_id = ea.quest_id WHERE ea.axmne_id='$eid' AND ea.exam_id='$exam_id' AND ea.exans_status='new' AND ea.exans_grade='correct' ");
+                                                ?>
                                                 <span>
                                                     <?php echo $selScore->rowCount(); ?>
                                                     <?php 
@@ -55,7 +57,7 @@
                                            </td>
                                            <td>
                                               <?php 
-                                                    $selScore = $conn->query("SELECT * FROM exam_question_tbl eqt INNER JOIN exam_answers ea ON eqt.eqt_id = ea.quest_id AND eqt.exam_answer = ea.exans_answer  WHERE ea.axmne_id='$eid' AND ea.exam_id='$exam_id' AND ea.exans_status='new' ");
+                                                    $selScore = $conn->query("SELECT * FROM exam_question_tbl eqt INNER JOIN exam_answers ea ON eqt.eqt_id = ea.quest_id WHERE ea.axmne_id='$eid' AND ea.exam_id='$exam_id' AND ea.exans_status='new' AND ea.exans_grade='correct' ");
                                                 ?>
                                                 <span>
                                                     <?php 
@@ -68,10 +70,19 @@
                                                      ?>
                                                 </span> 
                                            </td>
-                                           <!-- <td>
-                                               <a rel="facebox" href="facebox_modal/updateExaminee.php?id=<?php echo $selExmneRow['exmne_id']; ?>" class="btn btn-sm btn-primary">Print Result</a>
-
-                                           </td> -->
+                                            <td>
+                                               <a rel="facebox" href="facebox_modal/gradeStudent.php?eid=<?php echo $exam_id; ?>&exid=<?php echo $selExmneRow['exmne_id']; ?>" class="btn btn-sm btn-primary">
+                                                   <?php
+                                                    $graded = true;
+                                                    $selQuest = $conn->query("SELECT * FROM exam_question_tbl eqt INNER JOIN exam_answers ea ON eqt.eqt_id = ea.quest_id WHERE eqt.exam_id='$exam_id' AND ea.axmne_id='$exmne_id' AND ea.exans_status='new' ");
+                                                    while ($selQuestRow = $selQuest->fetch(PDO::FETCH_ASSOC))
+                                                        if ($selQuestRow['exans_grade'] == 'pending')
+                                                           $graded = false;
+                                                    if ($graded) echo 'Regrade';
+                                                    else echo 'Grade';
+                                                   ?>
+                                               </a>
+                                           </td>
                                         </tr>
                                     <?php }
                                 }

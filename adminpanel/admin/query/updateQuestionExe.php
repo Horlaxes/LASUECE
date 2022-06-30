@@ -3,7 +3,8 @@
  extract($_POST);
 
 
-$updCourse = $conn->query("UPDATE exam_question_tbl SET exam_question='$question', exam_ch1='$exam_ch1', exam_ch2='$exam_ch2', exam_ch3='$exam_ch3', exam_ch4='$exam_ch4' WHERE eqt_id='$question_id' ");
+$updCourse = $conn->query("UPDATE exam_question_tbl SET exam_question='$question' WHERE eqt_id='$question_id' ");
+//$updCourse = $conn->query("UPDATE exam_question_tbl SET exam_question='$question', exam_ch1='$exam_ch1', exam_ch2='$exam_ch2', exam_ch3='$exam_ch3', exam_ch4='$exam_ch4' WHERE eqt_id='$question_id' ");
 if($updCourse)
 {
 	   $res = array("res" => "success");
